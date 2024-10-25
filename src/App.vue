@@ -1,17 +1,17 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
+  <img alt="Vue logo" src="./assets/logo.png" />
   <GetAdminAPI />
 </template>
 
 <script>
-import GetAdminAPI from './components/GetAdminAPI.vue'
+import GetAdminAPI from "./components/GetAdminAPI.vue";
 
 export default {
-  name: 'App',
+  name: "App",
   components: {
-    GetAdminAPI
-  }
-}
+    GetAdminAPI,
+  },
+};
 </script>
 
 <style>

@@ -2,30 +2,26 @@
   <div></div>
 </template>
 <script>
-import axios from "axios";
-
 export default {
   name: "GetAdminAPI",
   data() {
     return {};
   },
   methods: {
-    getUsers() {
-      const path = `https://admin.googleapis.com`;
-      let userInfo = axios.create();
-
-      userInfo
-        .get(path + "/admin/directory/v1/users")
-        .then((res) => {
-          console.log(res);
-        })
-        .catch((err) => {
-          console.log("err : ", err);
-        });
+    async authorize() {
+      this.handleLogin();
+    },
+    async handleLogin() {
+      try {
+        const googleUser = await this.$gAuth.signIn();
+        console.log(googleUser);
+      } catch (err) {
+        console.error(err);
+      }
     },
   },
   created() {
-    this.getUsers();
+    this.authorize();
   },
 };
 </script>
